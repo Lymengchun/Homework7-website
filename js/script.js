@@ -52,6 +52,7 @@ function conver(){
     
    
 }
+
 function Palindrome()
 	{
         let varResult = document.getElementById('Result');
@@ -93,9 +94,15 @@ function Palindrome()
             items[firstIndex] = items[secondIndex];
             items[secondIndex] = temp;
         }
+          
             varNum = varNum.split(',');
             var items = varNum;
-        
+            console.log(items);
+        for (i in items)
+        {
+           items.push(parseFloat(items.shift()));
+        }
+        console.log(items);
 
         var len = items.length,
             i, j, stop;
@@ -115,45 +122,33 @@ function Palindrome()
           varResult.value = text;
     }
 
-    function quickSort(){
-        let varNum = document.getElementById('inputNumber').value;
-        let varResult = document.getElementById('Result');
 
-        let text ='';
-        varNum = varNum.split(',');
-            let arr = varNum;
-            let low = arr[0];
-            let high = arr[arr.length];
+function sum(){
+    let varNum = document.getElementById('inputNumber').value;
+    let varResult = document.getElementById('Result');
+    var i = 0;
+    var result = 0;
 
-        let quickSort = (arr, low, high) => {
-            let partition = (arr, low, high) => {
-              pivot = arr[high];
-              let i = low - 1;
-              for (j = low; j <= high - 1; j++) {
-                if (arr[j] < pivot) {
-                  i++;
-                  let tmp = arr[i];
-                  arr[i] = arr[j];
-                  arr[j] = tmp;
-                }
-              }
-              let tmp = arr[i + 1];
-              arr[i + 1] = arr[high];
-              arr[high] = tmp;
-              return i + 1;
-            };
-            if (low < high) {
-              pi = partition(arr, low, high);
-          
-              quickSort(arr, low, pi - 1);
-              quickSort(arr, pi + 1, high);
-            }
-          };
+    varNum = varNum.split('+');
+    console.log(varNum);
+    var arr = varNum;
+    
 
-          for (i = 0; i < quickSort.length; i++) {
-            text +=arr[i] +"\t";
-          }
-          varResult.value = text;
+    for (i in arr)
+        {
+           arr.push(parseFloat(arr.shift()));
+        }
+        console.log(arr);
 
+    for (i of arr){
+        result += i; 
     }
+
+
+    varResult.value = result;
+}
+
+
+
+ 
 

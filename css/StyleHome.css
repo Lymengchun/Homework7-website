@@ -1,0 +1,10 @@
+
+.ad{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+ }
+ 
+ img{
+    border-radius: 5px;
+ }
